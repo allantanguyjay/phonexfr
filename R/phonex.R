@@ -57,8 +57,8 @@
 #'   \item GU devient K devant un son e ou i (GUERIN, GUINCHARD), ou le U
 #'     est muet, et KU ailleurs, ou il se prononce (GUSTAVE). Le code et la
 #'     description de Brouard proposent respectivement KU et K.
-#'   \item Un E final apres K est supprime, pour rapprocher les finales en
-#'     -QUE et en -C : LEVEQUE, LEVEC.
+#'   \item Un E final est supprime (E muet), pour rapprocher FAURE et FORT,
+#'     MAURICE et MAURISSE, ou les finales en -QUE et en -C : LEVEQUE, LEVEC.
 #'   \item Les lettres accentuees absentes de la table de Brouard (n tilde,
 #'     a aigu...) sont ramenees a la lettre simple.
 #'   \item Les chiffres sont retires, car 1 a 5 servent de codes.
@@ -178,11 +178,11 @@ phonex <- function(noms) {
   code <- remplacer(code, "v", "f")
   code <- remplacer(code, "m", "n")
 
-  # 13. Lettres doublees, finale muette (T, X, S, Z), KE final lu K,
+  # 13. Lettres doublees, finale muette (T, X, S, Z), puis E final muet,
   # puis caracteres hors du code (espaces, tirets, apostrophes...)
   code <- gsub("(.)\\1+", "\\1", code)
   code <- gsub("[txsz]$", "", code)
-  code <- gsub("ke$", "k", code)
+  code <- gsub("e$", "", code)
   code <- gsub("[^12345efghiklnorstuwxyz]", "", code)
 
   code[match(noms, uniques)]

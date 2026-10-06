@@ -1,7 +1,7 @@
 # Regles de Brouard
 
 test_that("PH se lit F et les lettres doublees comptent pour une", {
-  expect_equal(phonex("PHILIPPE"), "filite")
+  expect_equal(phonex("PHILIPPE"), "filit")
   expect_equal(phonex("PHILIPPE"), phonex("FILIPE"))
 })
 
@@ -27,7 +27,7 @@ test_that("le son 'on' n'est pas confondu avec 'an'", {
 })
 
 test_that("les accents sont traites comme chez Brouard", {
-  expect_equal(phonex("H\u00e9l\u00e8ne"), "ylyne")
+  expect_equal(phonex("H\u00e9l\u00e8ne"), "ylyn")
 })
 
 # Modifications
@@ -52,11 +52,16 @@ test_that("QU se lit K", {
 test_that("GU se lit K devant un son e ou i, KU ailleurs", {
   expect_equal(phonex("GUERIN"), phonex("QUERIN"))
   expect_equal(phonex("GUINCHARD"), phonex("QUINCHARD"))
-  expect_equal(phonex("GUSTAVE"), "kustofe")
+  expect_equal(phonex("GUSTAVE"), "kustof")
 })
 
 test_that("-QUE final se lit comme -C", {
   expect_equal(phonex("LEVEQUE"), phonex("LEVEC"))
+})
+
+test_that("le E final est muet", {
+  expect_equal(phonex("FAURE"), phonex("FORT"))
+  expect_equal(phonex("MAURICE"), phonex("MAURISSE"))
 })
 
 test_that("les chiffres sont retires", {

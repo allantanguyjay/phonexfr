@@ -1,6 +1,6 @@
 Package: phonexfr
 Title: French Phonetic Coding of Surnames with the Phonex Algorithm
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(
     person("Allan", "Jay", , "allanjay66@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0007-2905-3703")),

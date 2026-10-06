@@ -26,7 +26,7 @@ remotes::install_github("allantanguyjay/phonexfr")
 library(phonexfr)
 
 phonex(c("PHILIPPE", "FILIPE", "DUPONT", "DUPOND", "LEVEQUE", "LEVEC"))
-#> [1] "filite" "filite" "tuton"  "tuton"  "lefek"  "lefek"
+#> [1] "filit" "filit" "tuton" "tuton" "lefek" "lefek"
 ```
 
 La fonction accepte les noms qu’ils soient en majuscules ou en
@@ -34,7 +34,7 @@ minuscules, avec ou sans accents. Elle conserve les valeurs manquantes :
 
 ``` r
 phonex(c("Le Brun", "LEBRUN", "Hélène", NA))
-#> [1] "lefrun" "lefrun" "ylyne"  NA
+#> [1] "lefrun" "lefrun" "ylyn"   NA
 ```
 
 Dans le code, les sons composés sont notés par des chiffres : 1 pour «
