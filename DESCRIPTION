@@ -1,0 +1,27 @@
+Package: phonexfr
+Title: French Phonetic Coding of Surnames with the Phonex Algorithm
+Version: 1.0.0
+Authors@R: c(
+    person("Allan", "Jay", , "allanjay66@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0007-2905-3703")),
+    person("Frederic", "Brouard", role = "cph",
+           comment = "Auteur de l'algorithme Phonex")
+  )
+Description: Computes phonetic codes for French surnames with an adapted
+    version of the Phonex algorithm by Frederic Brouard (1999)
+    <https://sqlpro.developpez.com/cours/soundex/>, including corrections
+    from earlier implementations. Names that sound alike receive the same
+    code. The package was initially developed to link noisy historical
+    databases despite spelling variations.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: fr
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0
+Imports: 
+    stringi
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/allantanguyjay/phonexfr
+BugReports: https://github.com/allantanguyjay/phonexfr/issues
